@@ -1,6 +1,6 @@
 <?php
 
-namespace AppDb;
+namespace IntercraftDb;
 
 use Illuminate\Support\ServiceProvider;
 
