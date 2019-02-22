@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSftpUsersTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSftpUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sftp_users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->string('username', 16);
-            $table->string('password', 60);
+            $table->string('email', 255);
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateSftpUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sftp_users');
+        Schema::dropIfExists('users');
     }
 }
