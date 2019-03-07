@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilesystemsTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateFilesystemsTable extends Migration
      */
     public function up()
     {
-        Schema::create("filesystems", function (Blueprint $table) {
+        Schema::create("password_resets", function (Blueprint $table) {
             $table->increments("id");
             $table->integer("user_id");
-            $table->boolean("is_creative");
-            $table->string("path", 255)->nullable();
-            $table->uuid("uuid");
-            $table->timestamps();
+            $table->string("token", 255);
+            $table->timestamp("created_at")->useCurrent();
         });
     }
 
@@ -30,6 +28,6 @@ class CreateFilesystemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("filesystems");
+        Schema::dropIfExists("password_resets");
     }
 }

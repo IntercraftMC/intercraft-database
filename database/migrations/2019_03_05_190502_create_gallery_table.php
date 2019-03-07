@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSftpRegisterTokensTable extends Migration
+class CreateGalleryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSftpRegisterTokensTable extends Migration
      */
     public function up()
     {
-        Schema::create('sftp_register_tokens', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->string('token', 64);
+        Schema::create("gallery", function (Blueprint $table) {
+            $table->increments("id");
+            $table->integer("user_id");
+            $table->string("hash", 16);
+            $table->string("title", 64);
+            $table->string("description", 255)->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSftpRegisterTokensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sftp_register_tokens');
+        Schema::dropIfExists("gallery");
     }
 }

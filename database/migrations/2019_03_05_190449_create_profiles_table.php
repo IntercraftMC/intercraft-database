@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserRegisterTokensTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateUserRegisterTokensTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_register_tokens', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('token', 64);
-            $table->timestamps();
+            $table->integer("user_id");
+            $table->integer("minecraft_account_id");
+            $table->text("description");
+            $table->string("country");
+            $table->timestamp("updated_at");
         });
     }
 
@@ -27,6 +30,6 @@ class CreateUserRegisterTokensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_register_tokens');
+        Schema::dropIfExists('profiles');
     }
 }

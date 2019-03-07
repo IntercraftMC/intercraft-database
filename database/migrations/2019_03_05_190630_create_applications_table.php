@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilesystemsTable extends Migration
+class CreateApplicationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateFilesystemsTable extends Migration
      */
     public function up()
     {
-        Schema::create("filesystems", function (Blueprint $table) {
-            $table->increments("id");
-            $table->integer("user_id");
-            $table->boolean("is_creative");
-            $table->string("path", 255)->nullable();
-            $table->uuid("uuid");
+        Schema::create('applications', function (Blueprint $table) {
+            $table->increments('id');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateFilesystemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists("filesystems");
+        Schema::dropIfExists('applications');
     }
 }
