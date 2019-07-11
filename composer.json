@@ -1,13 +1,13 @@
 {
-    "name": "dyrynda/vagabond",
-    "description": "Eloquent without a home",
+    "name": "intercraftmc/database",
+    "description": "The official database schema for the Intercraft Minecraft servers",
     "type": "project",
-    "homepage": "https://github.com/michaeldyrynda/vagabond",
+    "homepage": "https://github.com/IntercraftMC/intercraft-website",
     "license": "MIT",
     "authors": [
         {
-            "name": "Michael Dyrynda",
-            "email": "michael@dyrynda.com.au"
+            "name": "David Ludwig",
+            "email": "davidludwigii@gmail.com"
         }
     ],
     "require": {
