@@ -11,7 +11,9 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.0.0",
+        "fzaninotto/faker": "^1.8",
+        "symfony/debug": "^4.3"
     },
     "require-dev": {
         "dyrynda/nomad": "^1.1"
