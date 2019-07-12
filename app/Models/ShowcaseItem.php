@@ -15,4 +15,24 @@ class ShowcaseItem extends Model
 	{
 		return $this->belongsTo("IntercraftDb\\Models\\Showcase");
 	}
+
+	/**
+	 * Get a reference to the thumbnail
+	 *
+	 * @return string
+	 */
+	public function thumbnail()
+	{
+		return "/img/showcase/{$this->showcase_id}/{$this->id}_thumb.png";
+	}
+
+	/**
+	 * Get a reference to the full size image
+	 *
+	 * @return string
+	 */
+	public function image()
+	{
+		return "/img/showcase/{$this->showcase_id}/{$this->id}.png";
+	}
 }
