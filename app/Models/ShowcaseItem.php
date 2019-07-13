@@ -17,22 +17,12 @@ class ShowcaseItem extends Model
 	}
 
 	/**
-	 * Get a reference to the thumbnail
+	 * Get a path to the image name
 	 *
 	 * @return string
 	 */
-	public function thumbnail()
+	public function imagePath()
 	{
-		return "/img/showcase/{$this->showcase_id}/{$this->id}_thumb.png";
-	}
-
-	/**
-	 * Get a reference to the full size image
-	 *
-	 * @return string
-	 */
-	public function image()
-	{
-		return "/img/showcase/{$this->showcase_id}/{$this->id}.png";
+		return "/img/showcase/{$this->showcase_id}/{$this->id}";
 	}
 }

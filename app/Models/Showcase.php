@@ -15,4 +15,15 @@ class Showcase extends Model
 	{
 		return $this->hasMany("IntercraftDb\\Models\\ShowcaseItem");
 	}
+
+	/**
+	 * Get a path to the image name
+	 *
+	 * @return string
+	 */
+	public function imagePath()
+	{
+		$item = $this->items->first();
+		return $item ? $item->imagePath() : Null;
+	}
 }
