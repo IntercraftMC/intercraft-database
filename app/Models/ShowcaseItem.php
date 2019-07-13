@@ -25,4 +25,16 @@ class ShowcaseItem extends Model
 	{
 		return "/img/showcase/{$this->showcase_id}/{$this->id}";
 	}
+
+	/**
+	 * Convert the model instance to an array
+	 *
+	 * @return array
+	 */
+	public function attributesToArray()
+	{
+		$response = parent::attributesToArray();
+		$response["image"] = $this->imagePath();
+		return $response;
+	}
 }

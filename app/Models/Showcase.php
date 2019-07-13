@@ -26,4 +26,16 @@ class Showcase extends Model
 		$item = $this->items->first();
 		return $item ? $item->imagePath() : Null;
 	}
+
+	/**
+	 * Convert the model instance to an array
+	 *
+	 * @return array
+	 */
+	public function attributesToArray()
+	{
+		$response = parent::attributesToArray();
+		$response["image"] = $this->imagePath();
+		return $response;
+	}
 }
