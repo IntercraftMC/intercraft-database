@@ -17,8 +17,8 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer("user_id");
             $table->integer("minecraft_account_id");
-            $table->text("description");
-            $table->string("country");
+            $table->text("description")->nullable();
+            $table->string("country")->nullable();
             $table->timestamp("updated_at");
         });
     }
